@@ -19,9 +19,10 @@ class PostSeeder extends Seeder
     {
         for ($i = 1; $i < 11; $i++) {
             $post = new Post();
-            $post->title = $faker->sentences(3);
+
+            $post->title = $faker->sentence(3);
             $post->content = $faker->text(500);
-            $post->slug = $faker->generateSlug($post->title);
+            $post->slug = $post->generateSlug($post->title);
 
             $post->save();
         }
