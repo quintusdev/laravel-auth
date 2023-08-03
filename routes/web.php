@@ -19,6 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/* impoosto la route con auth e verified e prefix admin al file e raggruppo la route della dashboard */
 Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 });
