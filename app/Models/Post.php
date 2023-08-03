@@ -16,6 +16,6 @@ class Post extends Model
     /* faccio la funzione che crea lo slug del titolo */
     public static function generateSlug($title)
     {
-        return Str::slug('title', '-');
+        return Str::slug($title, '-');
     }
 }

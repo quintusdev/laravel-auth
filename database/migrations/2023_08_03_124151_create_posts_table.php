@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
+        /* Creiamo le colonne del database */
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 50);
+            $table->text('content')->nullable();
+            $table->string('slug');
             $table->timestamps();
         });
     }
