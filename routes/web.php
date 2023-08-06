@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\DashboardController as DashboardController;
+use App\Http\Controllers\Admin\PostController as PostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +22,10 @@ Route::get('/', function () {
 });
 
 /* impoosto la route con auth e verified e prefix admin al file e raggruppo la route della dashboard */
-Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    /* Creazione rotte di POSTS */
+    Route::resource('posts', PostController::class);
 });
 
 Route::middleware('auth')->group(function () {
