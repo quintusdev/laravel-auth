@@ -29,7 +29,8 @@
                                 <td class="bg-primary-subtle fw-bold">{{ $post->title }}</td>
                                 <td class="bg-primary-subtle fw-bold">{{ $post->slug }}</td>
                                 <td class="bg-primary-subtle fw-bold">
-                                    <a class="btn btn-success btn-sm" href="#"><i class="fas fa-eye"></i></a>
+                                    <a class="btn btn-success btn-sm" href="{{ route('admin.posts.show', $post->id) }}"><i
+                                            class="fas fa-eye"></i></a>
                                     <a class="btn btn-warning btn-sm" href=""><i class="fas fa-pen"></i></a>
                                     <form class="d-inline-block" action="#"
                                         onsubmit="return confirm('Sei sicuro di voler cancellare questo fumetto?')"
@@ -43,6 +44,8 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{-- Bottone per creare un nuovo post --}}
+                <a class="btn btn-success btn-sm" href="{{ route('admin.posts.create', $post->id) }}">Nuovo Post</a>
             </div>
         </div>
     </div>
