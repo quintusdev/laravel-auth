@@ -28,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.posts.create', compact('post'));
     }
 
     /**
@@ -39,7 +39,6 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -84,6 +83,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        /* elimino il post */
+        $post->delete();
+        /* effettuo il rediresct alla pagina index */
+        return redirect()->route('admin.posts.index');
     }
 }
