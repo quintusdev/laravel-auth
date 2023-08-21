@@ -8,7 +8,7 @@
             </div>
             <div class="col-12">
                 <p>
-                    {{ $project->content }}
+                    {{ $posts->content }}
                 </p>
                 <a href="{{ route('admin.posts.index') }}" class="btn btn-sm btn-primary">Ritorna alla lista completa</a>
             </div>
