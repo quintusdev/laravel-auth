@@ -8,13 +8,21 @@
                 <a href="{{ route('admin.posts.index') }}" class="btn btn-sm btn-primary">Ritorna alla lista completa</a>
             </div>
             <div class="col-12">
-                <form action="{{ route('admin.posts.store') }}" method="POST">
+                <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group mt-4">
                         <label class="contol-lable">Titolo</label>
                         <input class="form-control @error('title')is-invalid @enderror" type="text" name="title"
                             id="title" placeholder="Titolo" value="{{ old('title') }}">
                         @error('title')
+                            <div class="text-danger">{{ $messages }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group mt-4">
+                        <label class="contol-lable">Immagine</label>
+                        <input class="form-control @error('image')is-invalid @enderror" type="file" name="image"
+                            id="image">
+                        @error('image')
                             <div class="text-danger">{{ $messages }}</div>
                         @enderror
                     </div>
