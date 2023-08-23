@@ -31,8 +31,7 @@
                         <textarea class="form-control @error('content')is-invalid @enderror" name="content" id="content"
                             placeholder="Contenuto" value="{{ old('content') }}"></textarea>
                     </div>
-                    <div class="form-group
-                            mt-4">
+                    <div class="form-group mt-4">
                         <button class="btn btn-sm btn-success" type="submit">Salva</button>
                     </div>
                 </form>
