@@ -18,6 +18,7 @@
                             <div class="text-danger">{{ $messages }}</div>
                         @enderror
                     </div>
+                    {{-- Inserimento immagine --}}
                     <div class="form-group mt-4">
                         <label class="contol-lable">Immagine</label>
                         <input class="form-control @error('image')is-invalid @enderror" type="file" name="image"
