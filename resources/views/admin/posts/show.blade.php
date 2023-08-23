@@ -7,6 +7,9 @@
                 <h1 class="my-5">{{ $post->title }}</h1>
             </div>
             <div class="col-12">
+                <img src={{ asset('storage/' . $post->image) }}></img>
+            </div>
+            <div class="col-12">
                 <p>
                     {{ $post->content }}
                 </p>

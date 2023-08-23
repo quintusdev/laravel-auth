@@ -11,7 +11,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'content', 'slug'];
+    protected $fillable = ['title', 'content', 'image', 'slug'];
 
     /* faccio la funzione che crea lo slug del titolo */
     public static function generateSlug($title)
