@@ -9,11 +9,14 @@
             </div>
             <div class="col-12">
                 <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
+                    {{-- Token per rendere sicuro l'inserimento dei dati solo da questo sito e non da codice esterno possibilmente maligno --}}
                     @csrf
+                    {{-- Inserimento Titolo --}}
                     <div class="form-group mt-4">
                         <label class="contol-lable">Titolo</label>
                         <input class="form-control @error('title')is-invalid @enderror" type="text" name="title"
                             id="title" placeholder="Titolo" value="{{ old('title') }}">
+                        {{-- Gestione errore in fase di inserimento dati --}}
                         @error('title')
                             <div class="text-danger">{{ $messages }}</div>
                         @enderror
@@ -27,6 +30,7 @@
                             <div class="text-danger">{{ $messages }}</div>
                         @enderror
                     </div>
+                    {{-- Inserimento Contenuto --}}
                     <div class="form-group mt-4">
                         <label class="contol-lable">Contenuto</label>
                         <textarea class="form-control @error('content')is-invalid @enderror" name="content" id="content"
